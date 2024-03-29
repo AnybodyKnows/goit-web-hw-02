@@ -4,7 +4,6 @@ from datetime import datetime as dtdt
 import datetime as dt
 
 
-
 class Field:
     def __init__(self, value) -> None:
         self.value = value
