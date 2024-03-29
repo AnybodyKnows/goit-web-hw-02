@@ -1,7 +1,10 @@
 from AddrBook import *
 import pickle
 from abc import ABC, abstractmethod
+import pandas as pd
 
+df = pd.DataFrame({'col_1': [1, 2, 3], 'col_2': [4, 5, 6], 'col_3': [7, 8, 9]})
+# print(df) just to test external package in docker
 list_of_commands = [
     "add [name] [phone]: Add a new contact.",
     "change [name] [old_phone] [new_phone]: Change phone number of a contact.",
@@ -11,6 +14,7 @@ list_of_commands = [
     "show-birthday [name]: Show birthday of a contact.",
     "birthdays: Show upcoming birthdays.",
     "help: Show available commands.",
+    "df: will print df examples.",
     "close/exit: Close the program."]
 
 
@@ -203,6 +207,9 @@ def main():
 
         elif command == "help":
             ui.show_commands(list_of_commands)
+
+        elif command == "df":
+            print(df)
 
         else:
             print("Invalid command")
