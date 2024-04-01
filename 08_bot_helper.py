@@ -175,6 +175,7 @@ def main():
         if command in ["close", "exit"]:
             save_data(book)
             ui.goodbye_note(book)
+            break
         elif command in ["hello"]:
             ui.welcome_invite(book)
         elif command in ["add"]:
